@@ -1,4 +1,6 @@
-get '/signup' do
+class UsersController < ApplicationController
+  
+  get '/signup' do
     if Helpers.is_logged_in?(session)
       redirect to '/recipes'
     end
@@ -17,3 +19,4 @@ get '/signup' do
 
     redirect to '/recipes'
   end
+end 
