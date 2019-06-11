@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <form action="/recipes" method="post" enctype="multipart/form-data" class="well">
+      <div class="form-group"><strong>Name:</strong> <input type="text" name="recipe[name]" id="recipe_name" size="30" required></div>
+      <div class="form-group"><strong>Category (select one):</strong> <br>
+        <% Category.all.each do |category| %>
+          <input type="radio" name="recipe[category_id]" value="<%= category.id %>" id="category_<%= category.id %>" class="radio-inline" required>
+         </div> 
+  
+        <strong>Ingredients:</strong><br />
+        <textarea name="ingredients" cols="40" rows="5" id="ingredients" required></textarea>
+        
+        <strong>Instructions:</strong><br />
+        <textarea name="instructions" cols="40" rows="5" id="instructions" required></textarea>
+  
+        <input type="submit" value="Add Recipe">
+    </form>
+  </body>
+</html>

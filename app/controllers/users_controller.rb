@@ -19,4 +19,6 @@ class UsersController < ApplicationController
 
     redirect to '/recipes'
   end
+  
+ 
 end 
