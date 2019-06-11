@@ -1,24 +1,75 @@
 <!DOCTYPE html>
 <html>
-  <body>
-    <form action="/recipes" method="post">
-      <div class="form-group"><strong>Recipe Name:</strong> <input type="text" name="recipe_name" id="recipe_name" size="30" required></div>
-        <br>
-          <strong>Ingredients:</strong><br />
-          <textarea name="ingredients" cols="40" rows="5" id="ingredients" required></textarea>
-        </br>
-        <br>
-          <strong>Instructions:</strong><br />
-          <textarea name="instructions" cols="40" rows="5" id="instructions" required></textarea>
-        </br>
-        <br>
-         <div class="form-group"><strong>Category (select one):</strong> <br>
-        <br>
+<style>
+textarea {
+  width: 100%;
+  height: 150px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  font-size: 16px;
+  resize: none;}
+  
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+</style>
+<body>
+
+<h2>Create a Recipe</h2>
+
+<div>
+  <form action="/recipes" method="post">
+    <label for="rname"><strong>Recipe Name:</strong></label>
+    <input type="text" id="rname" name="recipename" required>
+    <br></br>
+    <label for="ingredients"><strong>Ingredients:</strong></label></br><br>
+      <textarea name="ingredients" cols="40" rows="5" id="ingredients" required></textarea>
+    <br>
+    <label><strong>Instructions:</strong></label><br />
+      <textarea name="instructions" cols="40" rows="5" id="instructions" required></textarea>
+    <br>
+    <label for="category">Category(select one):</label>
+      <select id="category" name="category">
         <% Category.all.each do |category| %>
-          <input type="radio" name="recipe[category_id]" value="<%= category.id %>" id="category_<%= category.id %>" class="radio-inline" required>
-         </div> 
-     <% end %></br>
-        <input type="submit" value="Add Recipe">
-    </form>
-  </body>
+        <input name[category_id] value="<%= category.id %>" id="category_<%= category.id %>" required>
+        <% end %></br>
+      </option>
+    </select>
+  <br></br>
+    <input type="submit" value="Submit">
+  </form>
+</div>
+
+</body>
 </html>
+
