@@ -1,1 +1,20 @@
-<h1>Show All of Users Recipes</h1>
+<h2>Recipes by <%= @user.username %></h2>
+  <% @recipes.each do |recipe| %>
+    <ul>
+      <li>
+      <%= recipe.id %>
+      <%= recipe.name %></li>
+    </ul>
+  <% end %>
+
+<h2>What would you like to do?</h2>
+<a href="/recipes/create_recipe"><button>Create another Recipe</button></a><br>
+</br>
+<a href="/recipes/edit_recipe"><button>Edit a Recipe</button></a><br>
+</br>
+<a href="/profile"><button>Go to Your Profile</button></a><br>
+</br>
+<a href="/logout"><button>Log Out</button></a>
+
+
+NOTE: returns all recipes for all users
