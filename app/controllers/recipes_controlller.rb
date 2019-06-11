@@ -1,1 +1,3 @@
-class RecipesController < UsersController
+require './config/environment'
+class RecipesController < ApplicationController
+end 
