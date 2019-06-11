@@ -49,8 +49,8 @@ div {
 
 <div>
   <form action="/recipes" method="post">
-    <label for="rname"><strong>Recipe Name:</strong></label>
-    <input type="text" id="rname" name="recipename" required>
+    <label for="name"><strong>Recipe Name:</strong></label>
+    <input type="text" id="name" name="name" required>
     <br></br>
     <label for="ingredients"><strong>Ingredients:</strong></label></br><br>
       <textarea name="ingredients" cols="40" rows="5" id="ingredients" required></textarea>
@@ -58,14 +58,7 @@ div {
     <label><strong>Instructions:</strong></label><br />
       <textarea name="instructions" cols="40" rows="5" id="instructions" required></textarea>
     <br>
-    <label for="category">Category(select one):</label>
-      <select id="category" name="category">
-        <% Category.all.each do |category| %>
-        <input name[category_id] value="<%= category.id %>" id="category_<%= category.id %>" required>
-        <% end %></br>
-      </option>
-    </select>
-  <br></br>
+    
     <input type="submit" value="Submit">
   </form>
 </div>
