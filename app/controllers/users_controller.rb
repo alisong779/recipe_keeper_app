@@ -38,7 +38,11 @@ class UsersController < ApplicationController
   end
 
   get '/profile' do 
-    erb :'users/profile'
+    if Helpers.is_logged_in?(session)
+      @user = Helpers.current_user(session)
+      # @user = current_user
+      erb :'users/profile'
+    end 
   end 
  
  get '/logout' do
@@ -49,6 +53,4 @@ class UsersController < ApplicationController
       redirect to '/'
     end
   end
-
-  
 end 

@@ -4,8 +4,8 @@ class RecipesController < ApplicationController
     if !Helpers.is_logged_in?(session)
       redirect to '/login'
     end
-    @recipes = Recipe.all
     @user = Helpers.current_user(session)
+    @recipes = @user.recipes 
     erb :"/recipes/recipes"
   end
 
@@ -25,5 +25,4 @@ get '/recipes/create_recipe' do
 
     redirect to '/recipes'
   end 
-
 end 
