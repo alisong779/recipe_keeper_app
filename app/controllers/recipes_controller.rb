@@ -25,4 +25,13 @@ get '/recipes/create_recipe' do
 
     redirect to '/recipes'
   end 
+  
+  get '/recipes/:id' do
+    if !logged_in?
+      redirect to '/login'
+    end
+    @recipe = Recipe.find(params[:id])
+    erb :"recipes/show"
+  end
+
 end 

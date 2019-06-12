@@ -23,23 +23,23 @@
   background-color: #3e8e41;
 }
 </style>
-</head>
-<body>
-  <h2>Recipes by <%= @user.username %></h2>
-  <% @recipes.each do |recipe| %>
-    <ul>
-      <li>
-      <a href="/recipes/show"><%= recipe.name %></li></a>
-    </ul>
-  <% end %>
+  </head>
+    <body>
+      <h2>Recipes by <%= @user.username %></h2>
+      <% @recipes.each do |recipe| %>
+      <ul>
+        <li>
+        <a href="/recipes/<%= recipe.id%>"><%= recipe.name %></li></a>
+      </ul>
+      <% end %>
 <br></br>
 <br></br>
-<h2>What would you like to do next?</h2>
-<div class="btn-group">
-  <a href="/recipes/create_recipe"><button class="button">Create a Recipe</button>
-  <a href="/profile"><button class="button">My Profile</button>
-  <a href="/logout"><button class="button">Log Out</button>
-</div>
+    <h2>What would you like to do next?</h2>
+  <div class="btn-group">
+    <a href="/recipes/create_recipe"><button class="button">Create a Recipe</button>
+    <a href="/profile"><button class="button">My Profile</button>
+    <a href="/logout"><button class="button">Log Out</button>
+  </div>
 
 
 </body>
