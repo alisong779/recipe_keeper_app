@@ -1,23 +1,23 @@
 class RecipesController < ApplicationController
   
   get '/recipes' do
-    if !Helpers.is_logged_in?(session)
+    if !logged_in?
       redirect to '/login'
     end
-    @user = Helpers.current_user(session)
+    @user = current_user
     @recipes = @user.recipes 
     erb :"/recipes/recipes"
   end
 
 get '/recipes/create_recipe' do
-    if !Helpers.is_logged_in?(session)
+    if !logged_in?
       redirect to '/login'
     end
     erb :"/recipes/create_recipe"
     end
     
   post '/recipes' do 
-    @user = Helpers.current_user(session)
+    @user = current_user
     if params[:name].empty?
       redirect to '/recipes/create_recipe'
     end

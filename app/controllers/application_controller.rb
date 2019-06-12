@@ -18,7 +18,7 @@ class ApplicationController < Sinatra::Base
       @user ||= User.find(session[:user_id])
     end 
   
-    def is_logged_in?
+    def logged_in?
       !!session[:user_id]
     end 
   end 

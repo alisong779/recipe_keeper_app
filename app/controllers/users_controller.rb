@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   
   get '/signup' do
-    if Helpers.is_logged_in?(session)
+    if logged_in?
       redirect to '/profile'
     end
 
@@ -21,7 +21,7 @@ class UsersController < ApplicationController
   end
   
   get '/login' do
-    if Helpers.is_logged_in?(session)
+    if logged_in?
       redirect to '/profile'
     end
       erb :"/users/login"
@@ -38,15 +38,15 @@ class UsersController < ApplicationController
   end
 
   get '/profile' do 
-    if Helpers.is_logged_in?(session)
-      @user = Helpers.current_user(session)
+    if logged_in?
+      @user = current_user
       # @user = current_user
       erb :'users/profile'
     end 
   end 
  
  get '/logout' do
-    if Helpers.is_logged_in?(session)
+    if logged_in?
       session.clear
       redirect to '/'
     else
