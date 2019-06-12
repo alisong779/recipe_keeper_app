@@ -56,5 +56,18 @@ get '/recipes/create_recipe' do
     redirect to "/recipes/#{recipe.id}"
   end
 
+  delete '/recipes/:id/delete' do 
+    if !logged_in?
+      redirect to '/login'
+    end
+    @recipe = Recipe.find(params[:id])
+    if current_user.id != @recipe.user_id
+      redirect to '/recipes'
+    else
+      @recipe.delete
+      redirect to '/recipes'
+    end 
+  end 
+
 
 end 
