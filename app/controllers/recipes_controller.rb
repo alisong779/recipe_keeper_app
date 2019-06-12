@@ -33,5 +33,28 @@ get '/recipes/create_recipe' do
     @recipe = Recipe.find(params[:id])
     erb :"recipes/show"
   end
+  
+  get '/recipes/:id/edit' do
+    if !logged_in?
+      redirect to '/login'
+    end
+    @recipe = Recipe.find(params[:id])
+    if current_user.id != @recipe.user_id
+      redirect to '/recipes'
+    end
+    erb :"recipes/edit_recipe"
+  end
+  
+  patch '/recipes/:id' do 
+    recipe = Recipe.find(params[:id])
+    if params[:name].empty?
+      redirect to "/recipes/#{params[:id]}/edit"
+    end
+    recipe.update(name: params[:name], ingredients: params[:ingredients], instructions: params[:instructions])
+    recipe.save
+
+    redirect to "/recipes/#{recipe.id}"
+  end
+
 
 end 
