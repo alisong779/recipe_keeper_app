@@ -2,28 +2,20 @@
 <html>
 <head>
 <style>
-body {
-  background-image: url("img_tree.png");
-  background-repeat: no-repeat;
-  background-position: right top;
-  margin-right: 200px;
-  background-attachment: fixed;
-}
+
 </style>
 </head>
 <body>
-
-
-
-<h2>Recipes by <%= @user.username %></h2>
+  <h2>Recipes by <%= @user.username %></h2>
   <% @recipes.each do |recipe| %>
     <ul>
       <li>
-      <%= recipe.name %></li>
+      <a href="/recipes/show"><%= recipe.name %></li></a>
     </ul>
   <% end %>
-
-<h2>What would you like to do?</h2>
+<br></br>
+<br></br>
+<h2>What would you like to do next?</h2>
 <a href="/recipes/create_recipe"><button>Create another Recipe</button></a><br>
 </br>
 <a href="/recipes/edit_recipe"><button>Edit a Recipe</button></a><br>
@@ -32,4 +24,5 @@ body {
 </br>
 <a href="/logout"><button>Log Out</button></a>
 
-
+</body>
+</html>
