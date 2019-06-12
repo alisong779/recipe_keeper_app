@@ -23,6 +23,17 @@ input[type=text], select {
   font-size: 16px;
 }
 
+input[type=password], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
 input[type=submit] {
   width: 100%;
   background-color: #4CAF50;
@@ -50,7 +61,7 @@ div {
 <h1>Login</h1>
 <form action="/login" method="POST">
   <input type="text" name="username" placeholder="Username:">
-  <input type="text" name="password" placeholder="Password:">
+  <input type="password" name="password" placeholder="Password:">
   <input type="submit" value="Submit">
 </form>
 </body>
