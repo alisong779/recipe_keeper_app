@@ -1,16 +1,17 @@
 <h1>Edit Recipe</h1>
-
+<div class="btn-group">
 <form method="POST" action="/recipes/<%= @recipe.id %>">
   <input id="hidden" type="hidden" name="_method" value="patch">
   <label>Name:</label><br>
   <input type="text" name="name" id="name" value="<%= @recipe.name %>"></br>
   <br>
   <label>Ingredients:</label><br>
-  <input type="text" name="ingredients" cols="40" rows="5" id="ingredients" value="<%= @recipe.ingredients %>"></br>
+  <textarea type="text" name="ingredients" cols="40" rows="5" id="ingredients"><%= @recipe.ingredients %></textarea></br>
   <br>
   <label>Instructions:</label><br>
-  <input type="text" name="instructions" id="instructions" value="<%= @recipe.instructions %>"></br>
+  <textarea type="text" name="instructions" cols="40" rows="5" id="ingredients" id="instructions" ><%= @recipe.instructions %></textarea></br>
   <br>
-  <input type="submit" value="submit"></br>
+  <input type="submit" class="button" value="Submit"></br>
 </form>
+</div>
 
