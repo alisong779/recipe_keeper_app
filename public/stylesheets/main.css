@@ -60,8 +60,8 @@
   }
 
   .sidebar {
-    background: #eee;
-    border: 1px solid #ccc;
+    background: #e3eaf2;
+    border: 1px solid #e3eaf2;
     float: right;
     padding: 2.08333333333%; /* 5px / 240px */
     width: 30%; /* 240px / 800px */
