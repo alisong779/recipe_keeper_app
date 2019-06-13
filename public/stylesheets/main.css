@@ -49,6 +49,7 @@
   p {
     margin-bottom: 18px;
   }
+  
 
   .main {
     overflow: hidden;
@@ -111,7 +112,16 @@
     font-size: 18px;
     line-height: 24px;
   }
+  
 }
+
+img {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 150px;
+}
+
 .btn-group .button {
   background-color: #4CAF50; /* Green */
   border: 1px solid green;
