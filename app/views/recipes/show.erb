@@ -1,53 +1,26 @@
-<!DOCTYPE html>
-<html>
-<head>
-<style>
-.btn-group .button {
-  background-color: #4CAF50; /* Green */
-  border: 1px solid green;
-  color: white;
-  padding: 15px 10px;
-  text-align: center;
-  text-decoration: none;
-  font-size: 16px;
-  cursor: pointer;
-  width: 150px;
-  display: block;
-}
-
-.btn-group .button:not(:last-child) {
-  border-bottom: none; /* Prevent double borders */
-}
-
-.btn-group .button:hover {
-  background-color: #3e8e41;
-}
-</style>
 
   <h1><%= @recipe.name %></h1>
   <br>
   </br>
   <h2>Ingredients: <%= @recipe.ingredients %></h2>
   <br>
-  <h2>Instructions: <%= @recipe.instructions %></h2></br>
-  <br>
+  <h2>Instructions: <%= @recipe.instructions %></h2>
 
+<div class="btn-group">
   <form action="/recipes/<%= @recipe.id %>/edit" method=get>
-    <input type="submit" value="Edit Recipe"/>
-  </form></br>
-  <br>
+    <input type="submit" class="button" value="Edit Recipe"/>
+  </form>
   <form action="/recipes/<%= @recipe.id %>/delete" method="post">
     <input id="hidden" type="hidden" name="_method" value="delete"/>
-    <input type="submit" value="Delete Recipe" />
-  </form></br>
-  <br>	
-  <form action="/profile" method=get>
-    <input type="submit" value="My Profile"/>
-  </form></br>
-  <br>
-  <form action="/logout" method=get>
-    <input type="submit" value="Logout"/>
+    <input type="submit" class="button" value="Delete Recipe" />
   </form>
+  <form action="/profile" method=get>
+    <input type="submit" class="button" value="My Profile"/>
+  </form>
+  <form action="/logout" method=get>
+    <input type="submit" class="button" value="Logout"/>
+  </form>
+  </div>
 
 
 
