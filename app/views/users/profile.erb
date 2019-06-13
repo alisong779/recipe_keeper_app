@@ -1,58 +1,17 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>Profile Page</title>
 
-<style>
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-}
-
-/* Style the header */
-.header {
-  background-color: #f1f1f1;
-  padding: 20px;
-  text-align: center;
-}
-
-/* Style the top navigation bar */
-.topnav {
-  overflow: hidden;
-  background-color: #333;
-}
-
-/* Style the topnav links */
-.topnav a {
-  float: left;
-  display: block;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-/* Change color on hover */
-.topnav a:hover {
-  background-color: #ddd;
-  color: black;
-}
-</style>
-</head>
-<body>
-
-<div class="header">
+<div class="btn-group">
   <h1>Hello <%= @user.username %>! Welcome to your Profile Page.</h1>
   <h2>What would you like to do?</h2>
-</div>
 
-<div class="topnav">
-  <a href="/recipes/create_recipe">Create a Recipe</a>
-  <a href="/recipes">View Your Recipes</a>
-  <a href="/logout">Logout</a>
+
+  <form action="/recipes/create_recipe" method=get>
+    <input type="submit" class="button" value="Create a Recipe"/>
+  </form>
+  <form action="/recipes" method=get>
+    <input type="submit" class="button" value="View Your Recipes"/>
+  </form>
+  <form action="/logout" method=get>
+    <input type="submit" class="button" value="Logout"/>
 </div>
 
 </body>

@@ -10,9 +10,15 @@
 <br></br>
     <h2>What would you like to do next?</h2>
   <div class="btn-group">
-    <a href="/recipes/create_recipe"><button class="button">Create a Recipe</button>
-    <a href="/profile"><button class="button">My Profile</button>
-    <a href="/logout"><button class="button">Log Out</button>
+     <form action="/recipes/create_recipe" method=get>
+    <input type="submit" class="button" value="Create a Recipe"/>
+  </form>
+  <form action="/profile" method=get>
+    <input type="submit" class="button" value="My Profile"/>
+  </form>
+  <form action="/logout" method=get>
+    <input type="submit" class="button" value="Logout"/>
+</div>
   </div>
 
 
