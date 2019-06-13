@@ -115,13 +115,6 @@
   
 }
 
-img {
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  padding: 5px;
-  width: 150px;
-}
-
 .btn-group .button {
   background-color: #4CAF50; /* Green */
   border: 1px solid green;
@@ -195,4 +188,12 @@ div {
   border-radius: 5px;
   background-color: #fff;
   padding: 20px;
+}
+
+img {
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  padding: 5px;
+  width: 150px;
+  float: right;
 }
