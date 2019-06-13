@@ -1,11 +1,11 @@
 
-      <h2>Recipes by <%= @user.username %></h2>
-      <% @recipes.each do |recipe| %>
-      <ul>
-        <li>
-        <a href="/recipes/<%= recipe.id%>"><%= recipe.name %></li></a>
-      </ul>
-      <% end %>
+<h1>Recipes by <%= @user.username %></h1>
+  <% @recipes.each do |recipe| %>
+  <ul>
+  <li>
+    <a href="/recipes/<%= recipe.id%>"><%= recipe.name %></li></a>
+  </ul>
+  <% end %>
 <br></br>
 <br></br>
     <h2>What would you like to do next?</h2>
