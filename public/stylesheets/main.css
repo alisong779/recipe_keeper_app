@@ -14,11 +14,7 @@
   /* --- Welcome Page Styles --- */
   body {
     background-color: black;
-    background-image: url('/images/Spices_FS.png') !important;
-    background-repeat:no-repeat;
-    background-position:top center;
-    margin:0;
-    padding:0;
+    color: #000;
     font-family: Sans-Serif;
     line-height: 18px;
   }
@@ -173,6 +169,17 @@ input[type=submit] {
 
 input[type=submit]:hover {
   background-color: #45a049;
+}
+
+input[type=password], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 16px;
 }
 
 div {
