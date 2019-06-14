@@ -1,9 +1,11 @@
 <h1><%= @recipe.name %></h1>
   <br>
   </br>
-  <h2>Ingredients: <%= @recipe.ingredients %></h2>
+  <h2>Ingredients:</h2><br>
+  <h3><%= @recipe.ingredients %></h3></br>
   <br>
-  <h2>Instructions: <%= @recipe.instructions %></h2>
+  <h2>Instructions:</h2><br>
+  <h3><%= @recipe.instructions %></h2></br>
 
 <div class="btn-group">
   <form action="/recipes/<%= @recipe.id %>/edit" method=get>
