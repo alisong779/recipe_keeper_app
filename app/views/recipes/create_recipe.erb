@@ -7,7 +7,7 @@
     <br></br>
     <label for="category"><strong>Choose a Category:</strong></label>
     <%@categories.each do |cat|%>
-    <input type="checkbox" name="recipe[category_id][]" value="<%=cat.id%>" id="<%=cat.id%>"><%= cat.name %></input>
+    <input type="checkbox" name="recipe[cat_id][]" value="<%=cat.id%>" id="<%=cat.id%>"><%= cat.name %></input>
     <%end%>
     <br></br>
     <label for="ingredients"><strong>Ingredients:</strong></label></br><br>
