@@ -1,3 +1,6 @@
+<% if flash.has?(:new_user_error) %>
+  <h3 style="color:red;"><%= flash[:new_user_error] %></h3>
+<% end %>
 <h1>Sign Up Below:</h1>
   <form action='/signup' method="POST">
     <label for "name">Username:</label>

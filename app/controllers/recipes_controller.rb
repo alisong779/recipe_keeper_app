@@ -1,5 +1,6 @@
 class RecipesController < ApplicationController
   
+  
   get '/recipes' do
     if !logged_in?
       redirect to '/login'
