@@ -1,5 +1,5 @@
-<% if flash.has?(:login_error) %>
-  <h3 style="color:red;"><%= flash[:login_error] %></h3>
+<% if flash.has?(:field_error) %>
+  <h3 style="color:red;"><%= flash[:field_error] %></h3>
 <% end %>
 <h1>Login</h1>
 <form action="/login" method="POST">

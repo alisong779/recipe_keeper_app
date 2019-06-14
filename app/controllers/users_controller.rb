@@ -10,7 +10,7 @@ class UsersController < ApplicationController
   
   post '/signup' do
     if (params[:username]).empty? || (params[:email]).empty? || (params[:password]).empty?
-      flash[:new_user_error] = "All fields are required."
+      flash[:field_error] = "All fields are required."
       redirect to '/signup'
     end
 
@@ -34,7 +34,7 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       redirect "/profile"
     elsif (params[:username]).empty? || (params[:password]).empty?
-      flash[:login_error] = "All fields are required."
+      flash[:field_error] = "All fields are required."
       redirect "/login"
     end
   end

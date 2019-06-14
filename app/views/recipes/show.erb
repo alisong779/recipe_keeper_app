@@ -2,7 +2,10 @@
   <br>
   </br>
   <h2>Ingredients:</h2><br>
-  <p><%= @recipe.ingredients %></p></br>
+  <p><% arr = @recipe.ingredients.split(",") %></p>
+  <p><% arr.each do |ingr| %></p>
+  <p><%= ingr %></p>
+  <p><% end %></p>
   <br>
   <h2>Instructions:</h2><br>
   <p><%= @recipe.instructions %></p></br>
