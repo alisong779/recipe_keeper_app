@@ -2,10 +2,10 @@
   <br>
   </br>
   <h2>Ingredients:</h2><br>
-  <h3><%= @recipe.ingredients %></h3></br>
+  <p><%= @recipe.ingredients %></p></br>
   <br>
   <h2>Instructions:</h2><br>
-  <h3><%= @recipe.instructions %></h2></br>
+  <p><%= @recipe.instructions %></p></br>
 
 <div class="btn-group">
   <form action="/recipes/<%= @recipe.id %>/edit" method=get>
