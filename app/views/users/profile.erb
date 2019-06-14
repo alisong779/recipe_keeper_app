@@ -1,7 +1,6 @@
-
 <div class="btn-group">
-  <p><img src="images/spices.png" alt="image" style="width:150px"><h1>Hello <%= @user.username %>!</h1>
-  Welcome to your Profile Page.</p>
+  <p><img src="images/spices.png" alt="image" style="width:300px"><h1>Hello <%= @user.username %>!</h1>
+  <h2>Welcome to your Profile Page.</h2></p>
 
   <h3>What would you like to do?</h3>
   <form action="/recipes/create_recipe" method=get>
@@ -12,11 +11,12 @@
   </form>
   <form action="/logout" method=get>
     <input type="submit" class="button" value="Logout"/>
+  </form>
 </div>
 
 <div class="sidebar">
-      <h3>This Weeks Top Recipes!</h3>
-        <p><a href="/recipes/16">Spinach Alfredo Lasagna</a></p>
+    <h3>This Weeks Top Recipes!</h3>
+    <p><a href="/recipes/16">Spinach Alfredo Lasagna</a></p>
 </div>
 
     <br></br>
