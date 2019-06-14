@@ -5,6 +5,11 @@
     <label for="name"><strong>Recipe Name:</strong></label>
     <input type="text" id="name" name="name" required>
     <br></br>
+    <label for="category"><strong>Choose a Category:</strong></label>
+    <%@categories.each do |cat|%>
+    <input type="checkbox" name="recipe[category_id][]" value="<%=cat.id%>" id="<%=cat.id%>"><%= cat.name %></input>
+    <%end%>
+    <br></br>
     <label for="ingredients"><strong>Ingredients:</strong></label></br><br>
     <textarea name="ingredients" cols="40" rows="5" id="ingredients" required></textarea>
     <br>
@@ -14,6 +19,7 @@
     <label><strong>Notes:</strong></label><br />
     <textarea name="notes" cols="40" rows="5" id="notes"></textarea>
     <br>
+    
  
     <input type="submit" value="Submit">
   </form>

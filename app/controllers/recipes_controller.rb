@@ -14,6 +14,7 @@ get '/recipes/create_recipe' do
     if !logged_in?
       redirect to '/login'
     end
+    @categories = Category.all 
     erb :"/recipes/create_recipe"
     end
     

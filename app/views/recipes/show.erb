@@ -9,6 +9,8 @@
   <br>
   <h2>Instructions:</h2><br>
   <p><%= @recipe.instructions %></p></br>
+  <h2>Category:</h2><br>
+  <p><%= @recipe.category %></p></br>
 
 <div class="btn-group">
   <form action="/recipes/<%= @recipe.id %>/edit" method=get>
