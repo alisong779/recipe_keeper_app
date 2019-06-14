@@ -11,21 +11,7 @@
     <label><strong>Instructions:</strong></label><br />
     <textarea name="instructions" cols="40" rows="5" id="instructions" required></textarea>
     <br>
-    
-    <label>Choose a Category:</label>
-    <br>
  
-    <%@Category.each do |cat|%>
-    <input type="checkbox" name="category[name]" id="<%=category.id%>" value="<%=category.id%>"><%=category.name%></input>
-    <%end%>
-    <br>
- 
-    <label>and/or, create a new catgory:</label>
-    <br>
-    <label>name:</label>
-      <input  type="text" name="category[name]"></input>
-    <br>
-
     <input type="submit" value="Submit">
   </form>
 </div>
