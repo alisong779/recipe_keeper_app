@@ -22,7 +22,7 @@ get '/recipes/create_recipe' do
     if params[:name].empty?
       redirect to '/recipes/create_recipe'
     end
-    @recipe = Recipe.create(name: params[:name], ingredients: params[:ingredients], instructions: params[:instructions], :user_id => @user.id)
+    @recipe = Recipe.create(name: params[:name], ingredients: params[:ingredients], instructions: params[:instructions], notes: params[:notes], :user_id => @user.id)
 
     redirect to '/recipes'
   end 
@@ -51,7 +51,7 @@ get '/recipes/create_recipe' do
     if params[:name].empty?
       redirect to "/recipes/#{params[:id]}/edit"
     end
-    recipe.update(name: params[:name], ingredients: params[:ingredients], instructions: params[:instructions])
+    recipe.update(name: params[:name], ingredients: params[:ingredients], instructions: params[:instructions], notes: params[:notes])
     recipe.save
 
     redirect to "/recipes/#{recipe.id}"
