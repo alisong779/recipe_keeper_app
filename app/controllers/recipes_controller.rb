@@ -13,7 +13,6 @@ get '/recipes/create_recipe' do
     if !logged_in?
       redirect to '/login'
     end
-    @categories = Category.all 
     erb :"/recipes/create_recipe"
     end
     
@@ -32,7 +31,11 @@ get '/recipes/create_recipe' do
       redirect to '/login'
     end
     @recipe = Recipe.find(params[:id])
-    erb :"recipes/show"
+      if current_user.id != @recipe.user_id
+        erb :"recipes/rand_recipe"
+      else 
+        erb :"recipes/show"
+      end 
   end
   
   get '/recipes/:id/edit' do
@@ -69,5 +72,6 @@ get '/recipes/create_recipe' do
       redirect to '/recipes'
     end 
   end 
+  
 
 end 

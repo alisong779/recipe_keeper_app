@@ -4,18 +4,18 @@
   <% @recipes.each do |recipe| %>
   <ul>
   <li>
-    <a href="/recipes/<%= recipe.id%>"><%= recipe.name %></li></a>
+  <a href="/recipes/<%= recipe.id%>"><%= recipe.name %></li></a>
   </ul>
   <% end %>
 <br></br>
 <br></br>
   <div class="btn-group">
-     <form action="/recipes/create_recipe" method=get>
+    <form action="/recipes/create_recipe" method=get>
     <input type="submit" class="button" value="Create a Recipe"/>
-  </form>
-  <form action="/profile" method=get>
+    </form>
+    <form action="/profile" method=get>
     <input type="submit" class="button" value="My Profile"/>
-  </form>
-  <form action="/logout" method=get>
+    </form>
+    <form action="/logout" method=get>
     <input type="submit" class="button" value="Logout"/>
 </div>

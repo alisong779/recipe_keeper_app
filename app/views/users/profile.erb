@@ -3,21 +3,21 @@
   <h2>Welcome to your Profile Page.</h2></p>
 
   <h3>What would you like to do?</h3>
-  <form action="/recipes/create_recipe" method=get>
+    <form action="/recipes/create_recipe" method=get>
     <input type="submit" class="button" value="Create a Recipe"/>
-  </form>
-  <form action="/recipes" method=get>
+    </form>
+    <form action="/recipes" method=get>
     <input type="submit" class="button" value="View Your Recipes"/>
-  </form>
-  <form action="/logout" method=get>
+    </form>
+    <form action="/logout" method=get>
     <input type="submit" class="button" value="Logout"/>
-  </form>
+    </form>
 </div>
 
 <div class="sidebar">
-    <h3>This Weeks Top Recipes!</h3>
-    <p><a href="/recipes/16">Spinach Alfredo Lasagna</a></p>
-    <p><a href="/recipes/22">Corn Casserole</a></p>
+  <h3>This Weeks Top Recipe!</h3>
+    <p><% recipe = Recipe.all.sample %></p>
+    <a href="/recipes/<%= recipe.id%>"><%= recipe.name %></li></a>
 </div>
 
     <br></br>
