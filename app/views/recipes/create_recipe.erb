@@ -16,13 +16,6 @@
     <textarea name="notes" cols="40" rows="5" id="notes"></textarea>
     <br>
     
-    <label>Choose a Category:</label>
-    <br>
-    <%@categories.each do |cat|%>
-      <input type="checkbox" name="recipe[category_ids][]" id="<%=cat.id%>" value="<%=cat.id%>"><%=cat.name%></input>
-    <%end%>
-    <br>
-
     <input type="submit" value="Submit">
   </form>
 </div>

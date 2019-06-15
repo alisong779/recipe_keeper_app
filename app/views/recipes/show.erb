@@ -9,15 +9,8 @@
   <br>
   <h2>Instructions:</h2><br>
   <p><%= @recipe.instructions %></p></br>
-  
-  <h4>Categories:</h4>
-  <%@recipe.categories.each do |cat|%>
-  <%=cat.name%>
-  <%end%>
-</ul>
-
-  
-  
+  <h2>Notes:</h2><br>
+  <p><%= @recipe.notes %></p></br>
   
 
 <div class="btn-group">

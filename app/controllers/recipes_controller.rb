@@ -22,10 +22,8 @@ get '/recipes/create_recipe' do
     if params[:name].empty?
       redirect to '/recipes/create_recipe'
     end
+    
     @recipe = Recipe.create(name: params[:name], ingredients: params[:ingredients], instructions: params[:instructions], notes: params[:notes], :user_id => @user.id)
-    if !params[:category][:name].empty?
-      @recipe.categories << Category.create(name: params[:category][:name])
-    end
     redirect to '/recipes'
   end 
   
@@ -49,17 +47,11 @@ get '/recipes/create_recipe' do
   end
   
   patch '/recipes/:id' do
-    if !params[:recipe].keys.include?("cat_ids")
-      params[:owner]["cat_ids"] = []
-    end
     recipe = Recipe.find(params[:id])
     if params[:name].empty?
       redirect to "/recipes/#{params[:id]}/edit"
     end
     recipe.update(name: params[:name], ingredients: params[:ingredients], instructions: params[:instructions], notes: params[:notes])
-    if !params["category"]["name"].empty?
-      @recipe.categories << Category.create(name: params["category"]["name"])
-    end
     recipe.save
 
     redirect to "/recipes/#{recipe.id}"
@@ -77,6 +69,5 @@ get '/recipes/create_recipe' do
       redirect to '/recipes'
     end 
   end 
-
 
 end 
