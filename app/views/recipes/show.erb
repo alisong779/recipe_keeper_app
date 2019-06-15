@@ -11,9 +11,8 @@
   <p><%= @recipe.instructions %></p></br>
   
   <h4>Categories:</h4>
-  <ul>
-  <%@owner.categories.each do |cat|%>
-  <li><%=cat.name%></li>
+  <%@recipe.categories.each do |cat|%>
+  <%=cat.name%>
   <%end%>
 </ul>
 
