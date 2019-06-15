@@ -9,6 +9,17 @@
   <br>
   <h2>Instructions:</h2><br>
   <p><%= @recipe.instructions %></p></br>
+  
+  <h4>Categories:</h4>
+  <ul>
+  <%@owner.categories.each do |cat|%>
+  <li><%=cat.name%></li>
+  <%end%>
+</ul>
+
+  
+  
+  
 
 <div class="btn-group">
   <form action="/recipes/<%= @recipe.id %>/edit" method=get>
