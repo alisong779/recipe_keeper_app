@@ -31,11 +31,7 @@ get '/recipes/create_recipe' do
       redirect to '/login'
     end
     @recipe = Recipe.find(params[:id])
-      if current_user.id != @recipe.user_id
-        erb :"recipes/rand_recipe"
-      else 
-        erb :"recipes/show"
-      end 
+    erb :"recipes/show"
   end
   
   get '/recipes/:id/edit' do
