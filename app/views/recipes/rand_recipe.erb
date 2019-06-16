@@ -20,6 +20,12 @@
   <form action="/logout" method=get>
     <input type="submit" class="button" value="Logout"/>
   </form>
+  <p><% if @recipe.user_id == session[:user_id] %>
+  <a href="/recipes/<%= @recipe.id %>/edit">Edit Your Recipe</a>
+    <% else %>
+  <a href="/recipes/<%= @recipe.id %>/makeit">Make it Your Own</a>
+    <% end %></p>
+
   </div>
 
 

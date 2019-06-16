@@ -73,5 +73,20 @@ get '/recipes/create_recipe' do
     end 
   end 
   
+  get '/recipes/:id/makeit' do
+    @recipe = find_recipe_by_id
+    if !logged_in?
+      redirect to "/login"
+    end 
+    @user = current_user
+    if @user = @recipe.user_id 
+      redirect to "/recipes/#{@recipe.id}"
+    else 
+      erb :'recipes/makeit'
+    end 
+  end 
+
+
+
 
 end 
