@@ -13,8 +13,6 @@ class UsersController < ApplicationController
       flash[:field_error] = "All fields are required."
       redirect to '/signup'
     end
-
-
     @user = User.create(username: params[:username], email: params[:email], password: params[:password])
     session[:user_id] = @user.id
 
@@ -42,7 +40,6 @@ class UsersController < ApplicationController
   get '/profile' do 
     if logged_in?
       @user = current_user
-      # @user = current_user
       erb :'users/profile'
     end 
   end 
