@@ -23,6 +23,10 @@ class ApplicationController < Sinatra::Base
     def logged_in?
       !!session[:user_id]
     end 
+    
+    def authorized_to_edit?(object)
+      current_user.id == object.user_id
+    end 
   end 
 
 end
